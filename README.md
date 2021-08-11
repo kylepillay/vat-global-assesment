@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Vat Global Assessment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -39,8 +39,22 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### `yarn generate-sass-types`
+### `yarn watch-sass-types`
+### `yarn validate-sass-types`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project uses SASS as well as TypeScript. In order to keep our styles strongly typed we use scripts to generate types as well as validate them.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Redux and Redux Saga
+
+We use Redux for all state management and Redux Saga to handle Async operations in conjunction with state management.
+
+## Typescript and ESLint
+
+Typescript is used throughout the project, but that doesn't negate the need for eslint. ESLint is still used in conjunction with TypeScript.
+
+## Given More Time
+
+Given more time I would have implemented unit tests extensively as there are a large number of areas where unit tests are needed. I would have also implemented a more comprehensive theming system.
+
+Given the instruction to not use third party libraries, there would have been a number of places, for example forms, where I would have used a 3rd party library like react-hook-form.

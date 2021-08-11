@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+.screen {
+    width: 100wh;
+    height: 100vh;
+    background-color: $lowerBackground;
+    display: flex;
+}
+
+.container {
+    flex: 1;
+    padding: 20px;
+}

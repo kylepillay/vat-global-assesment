@@ -1,0 +1,62 @@
+@import '../../styles/variables.scss';
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.listContainer {
+    flex: 1;
+    margin-top: 20px;
+}
+
+.tableHeader {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $borders;
+    color: $text;
+}
+
+.contentHeading {
+    flex: 3
+}
+
+.authorHeading {
+    flex: 1
+}
+
+.itemsContainer {
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $text;
+}
+
+.cardListItem {
+    display: flex;
+    padding-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $text;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $borders;
+    align-items: center;
+    cursor: pointer;
+
+    :hover {
+        background-color: $shadows;
+    } 
+}
+
+.listItemContent {
+    flex: 3;
+    text-overflow: ellipsis;
+    
+}
+
+.listItemAuthor {
+    flex: 1;
+}

@@ -1,0 +1,8 @@
+@import '../../styles/variables.scss';
+
+.container {
+    border-radius: 20px;
+    background: $upperBackground;
+    box-shadow:  20px 20px 60px $shadows, -20px -20px 60px #ffffff;
+    padding: 20px;
+}

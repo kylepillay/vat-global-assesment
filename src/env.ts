@@ -1,0 +1,1 @@
+export const QUOTES_ENDPOINT = "https://api.quotable.io?"
