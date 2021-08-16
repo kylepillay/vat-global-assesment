@@ -1,8 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import searchReducer from '../containers/Search/store/search.reducer'
+import {searchQuotesReducer, allQuotesReducer, singleQuotesReducer} from '../containers/Search/store/search.reducer'
 
 const rootReducer = combineReducers({
-    searchAll: searchReducer
+    allQuotes: allQuotesReducer,
+    searchAll: searchQuotesReducer,
+    getSingle: singleQuotesReducer
 } as {
     searchAll: any
 })

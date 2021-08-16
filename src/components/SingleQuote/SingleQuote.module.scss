@@ -1,0 +1,76 @@
+@import '../../styles/variables.scss';
+
+.mainContainer {
+    padding: 20px;
+    display: flex;
+}
+
+.avatarContainer {
+    flex: 3;
+}
+
+.avatar {
+    border-radius: 100%;
+    box-shadow:  20px 20px 20px $shadows, -20px -20px 20px #ffffff;
+    width: 100px;
+    height: 100px;
+    background-position: 'center';
+    background-size: 'cover';
+    background-repeat: 'no-repeat'
+;}
+
+.content {
+    display: flex;
+    flex: 9;
+    padding-left: 40px;
+    flex-direction: column;
+}
+
+.textItem {
+    padding: 5px 0 5px 0;
+    color: $text;
+}
+
+.textContent {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.authorContent {
+    font-size: 12px;
+    font-weight: 500;
+    padding-top: 5px;
+}
+
+.tagsContainer {
+    font-size: 12px;
+    font-weight: 500;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.tag {
+    border: 1px solid $borders;
+    padding: 4px 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background: $secondary;
+    color: $lowerBackground
+}
+
+.backContainer {
+    margin-bottom: 30px;
+}
+
+.backButton {
+    height: 40px;
+    width: 80px;
+    border-radius: 10px;
+    border: 1px solid $borders;
+
+    :hover {
+        background: $secondary;
+        cursor: pointer;
+    }
+}

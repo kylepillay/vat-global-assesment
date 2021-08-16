@@ -1,11 +1,13 @@
 import { all, spawn, call } from 'redux-saga/effects'
-import fetchAllQuotes from '../containers/Search/store/search.sagas'
+import {fetchQuotesActionWatcher, searchQuotesActionWatcher, getQuoteActionWatcher} from '../containers/Search/store/search.sagas'
 
 export default function* rootSaga () {
     const sagas = [
-      fetchAllQuotes
+      fetchQuotesActionWatcher,
+      searchQuotesActionWatcher,
+      getQuoteActionWatcher
     ];
-  
+   
     yield all(sagas.map(saga =>
       spawn(function* () {
         while (true) {

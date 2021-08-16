@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.paginationContainer {
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $text;
+    display: flex;
+    justify-content: space-between;
+
+    .paginationItem {
+        margin-left: 4px;
+        cursor: pointer;
+    }
+
+    .paginationButton {
+        margin-left: 4px;
+        margin-right: 4px;
+        padding: 4px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .paginationButtonSelected {
+        background: $secondary;
+        border: 1px solid $lowerBackground;
+        color: $lowerBackground;
+    }
+}

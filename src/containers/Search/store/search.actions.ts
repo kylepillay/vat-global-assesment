@@ -1,4 +1,4 @@
-import { GET_ALL_QUOTES, GET_ALL_QUOTES_FAILED, GET_ALL_QUOTES_COMPLETE, GET_ALL_QUOTES_SUCCESS, SEARCH_ALL_QUOTES, SEARCH_ALL_QUOTES_FAILED, SEARCH_ALL_QUOTES_COMPLETE, SEARCH_ALL_QUOTES_SUCCESS } from "./search.constants";
+import { GET_ALL_QUOTES, GET_ALL_QUOTES_FAILED, GET_ALL_QUOTES_COMPLETE, GET_ALL_QUOTES_SUCCESS, SEARCH_ALL_QUOTES, SEARCH_ALL_QUOTES_FAILED, SEARCH_ALL_QUOTES_COMPLETE, SEARCH_ALL_QUOTES_SUCCESS, GET_SINGLE_QUOTES, GET_SINGLE_QUOTES_SUCCESS, GET_SINGLE_QUOTES_COMPLETE } from "./search.constants";
 import { 
     GetAllQuotesPayload, 
     GetAllQuotesFailedPayload, 
@@ -45,10 +45,10 @@ export const getAllQuotesAction = ({ page, perPage }: GetAllQuotesPayload) =>
 /* -------------------------------------------------------------------------- */
 
 
-  export const searchAllQuotesAction = ({ page, perPage }: SearchAllQuotesPayload) =>
+  export const searchAllQuotesAction = ({ page, perPage, query }: SearchAllQuotesPayload) =>
   ({
     type: SEARCH_ALL_QUOTES,
-    payload: { page, perPage } as SearchAllQuotesPayload
+    payload: { page, perPage, query } as SearchAllQuotesPayload
   } as const)
 
   export const searchAllQuotesSuccessAction = (payload: SearchAllQuotesSuccessPayload) =>
@@ -73,25 +73,25 @@ export const getAllQuotesAction = ({ page, perPage }: GetAllQuotesPayload) =>
 /* -------------------------------------------------------------------------- */
 
 
-export const getSingleQuotesAction = ({ page, perPage }: GetSingleQuotesPayload) =>
+export const getSingleQuotesAction = ({ id }: GetSingleQuotesPayload) =>
 ({
-  type: SEARCH_ALL_QUOTES,
-  payload: { page, perPage } as GetSingleQuotesPayload
+  type: GET_SINGLE_QUOTES,
+  payload: { id } as GetSingleQuotesPayload
 } as const)
 
 export const getSingleQuotesSuccessAction = (payload: GetSingleQuotesSuccessPayload) =>
 ({
-  type: SEARCH_ALL_QUOTES_SUCCESS,
+  type: GET_SINGLE_QUOTES_SUCCESS,
   payload: payload as GetSingleQuotesSuccessPayload
 } as const)
 
 export const getSingleQuotesFailedAction = ({ error }: GetSingleQuotesFailedPayload) =>
 ({
-  type: SEARCH_ALL_QUOTES_FAILED,
+  type: GET_ALL_QUOTES_FAILED,
   payload: { error } as GetSingleQuotesFailedPayload
 } as const)
 
 export const getSingleQuotesCompleteAction = () =>
 ({
-  type: SEARCH_ALL_QUOTES_COMPLETE
+  type: GET_SINGLE_QUOTES_COMPLETE
 } as const)

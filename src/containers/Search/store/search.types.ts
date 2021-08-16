@@ -24,12 +24,24 @@ export interface QuoteListState {
     isLoading?: boolean
 }
 
+
+export interface SearchQuoteListState {
+  count: number
+  totalCount: number
+  page: number
+  totalPages: number
+  lastItemIndex: number
+  results: Array<QuoteListItem>
+  isLoading?: boolean
+}
+
 export interface SingleQuoteState {
   tags: string[]
   _id: string
   author: string
   length: number
   content: string
+  isLoading?: boolean
 }
 
 /* -------------------------------------------------------------------------- */
@@ -89,8 +101,9 @@ export type GetSingleQuoteCompleteAction = ReturnType<
 /* -------------------------------------------------------------------------- */
 
 export interface GetAllQuotesPayload {
-    page: string
-    perPage: string
+    page: number
+    perPage: number
+    query: string
   }
   
 export interface GetAllQuotesFailedPayload {
@@ -108,8 +121,9 @@ export interface GetAllQuotesSuccessPayload {
 }
 
 export interface SearchAllQuotesPayload {
-  page: string
-  perPage: string
+  page: number
+  perPage: number
+  query: string
 }
 
 export interface SearchAllQuotesFailedPayload {
@@ -128,8 +142,7 @@ isLoading?: boolean
 
 
 export interface GetSingleQuotesPayload {
-  page: string
-  perPage: string
+  id: string
 }
 
 export interface GetSingleQuotesFailedPayload {
@@ -153,7 +166,7 @@ export type GetQuoteListAction =
   | GetAllQuotesSuccessAction
   | GetAllQuoteCompleteAction
 
-  export type SearchListAction =
+  export type SearchQuotesAction =
   | SearchAllQuotesAction
   | SearchAllQuotesFailedAction
   | SearchAllQuotesSuccessAction
