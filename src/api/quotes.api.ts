@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const fetchQuotes = ({ page, perPage }: { page: number, perPage: number}) => {
-    console.log(perPage)
     return axios.get('/quotes', {
         params: {
             page,

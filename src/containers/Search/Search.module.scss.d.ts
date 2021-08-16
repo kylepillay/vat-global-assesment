@@ -3,6 +3,7 @@ export const container: string;
 export const heading: string;
 export const leftColumn: string;
 export const listContainer: string;
+export const loadingContainer: string;
 export const pageSelectDropDown: string;
 export const rightColumn: string;
 export const rowsContainer: string;

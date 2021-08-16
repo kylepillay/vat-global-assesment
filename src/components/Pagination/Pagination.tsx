@@ -8,7 +8,7 @@ const Pagination: FC<PaginationProps> = ({ listData, onNextClicked, onPageClicke
         <div className={paginationContainer}>
             <button className={paginationButton} onClick={onPreviousClicked}>Previous</button>
             <div>
-                {range(listData.page, listData.totalPages).map(item => <button className={`${paginationItem} ${item === listData.page ? paginationButtonSelected : ''}`} value={item} onClick={onPageClicked}>{item}</button>)}
+                {range(listData.page, listData.totalPages).map(item => <button key={item} className={`${paginationItem} ${item === listData.page ? paginationButtonSelected : ''}`} value={item} onClick={onPageClicked}>{item}</button>)}
             </div>
             <button className={paginationButton} onClick={onNextClicked}>Next</button>
         </div>

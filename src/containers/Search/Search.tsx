@@ -1,11 +1,10 @@
-import React, { ChangeEventHandler, MouseEventHandler, useCallback, useEffect, useRef, useState } from 'react'
+import React, { ChangeEventHandler, MouseEventHandler, useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Card from '../../components/Card/Card'
 import Input from '../../components/Input/Input'
 import Pagination from '../../components/Pagination/Pagination'
 import SingleQuote from '../../components/SingleQuote'
-import range from '../../utils/range'
-import { container, listContainer, table, cardListItem, heading, leftColumn, rightColumn, rowsContainer, pageSelectDropDown } from './Search.module.scss'
+import { container, listContainer, table, cardListItem, heading, leftColumn, rightColumn, rowsContainer, pageSelectDropDown, loadingContainer } from './Search.module.scss'
 import { getAllQuotesAction, searchAllQuotesAction } from './store/search.actions'
 
 const Search = () => {
@@ -70,13 +69,13 @@ const Search = () => {
                                 <Card>
                                     <div className={pageSelectDropDown}>
                                         <div>Items per page:</div>
-                                        <select onChangeCapture={onPerPageChanged}>
-                                            <option>5</option>
-                                            <option>10</option>
-                                            <option selected>20</option>
-                                            <option>50</option>
-                                            <option>100</option>
-                                            <option>150</option>
+                                        <select defaultValue="20" onChangeCapture={onPerPageChanged}>
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                            <option value="150">150</option>
                                         </select>
                                     </div>
                                     <div className={table}>
@@ -86,7 +85,7 @@ const Search = () => {
                                         </div>
                                         <div className={rowsContainer}>
                                             {searchData.results.map((item: any) => {
-                                                return (<div className={cardListItem} onClick={(e) => { onListItemClicked(item) }}>
+                                                return (<div className={cardListItem} key={item._id} onClick={(e) => { onListItemClicked(item) }}>
                                                     <div className={leftColumn}>
                                                         {item.content}
                                                     </div>
@@ -98,7 +97,11 @@ const Search = () => {
                                         </div>
                                     </div>
                                     <Pagination listData={searchData} onNextClicked={nextPage} onPreviousClicked={previousPage} onPageClicked={onSelectPage} />
-                                </Card> : <div>Loading</div>
+                                </Card> : <Card>
+                                    <div className={loadingContainer}>
+                                        {query.length ? 'Loading' : 'No results found.'}
+                                    </div>
+                                </Card>
                         }
                     </div>
                 </div>}
